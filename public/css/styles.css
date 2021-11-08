@@ -1,7 +1,10 @@
 body{
-    background-image: linear-gradient(to bottom, #dff9fb, #cbe6ec, #b7d4dd, #a5c1cf, #95afc0);
+    background-color: #273c75;
+    background-repeat: no-repeat;
     margin: 0;
-    color: white
+    color: white;
+    height: 100vh;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .wrapper{
@@ -16,21 +19,23 @@ body{
     min-width: 10rem;
     max-width: 12rem;
     margin: 2rem;
-    background-color: white;
+    /* background-color: #dcdde1; */
+    background-color: #2f3640;
     text-align: center;
     transition: ease all 1s;
+    border-radius: 2rem;
 }
 
 .card:hover{
-    -webkit-box-shadow: 0px 0px 28px 4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 28px 4px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 28px 4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 28px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 28px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 28px 4px rgba(0, 0, 0, 0.5);
     transition: ease all 1s;
 }
 
 
 nav{
-    background-color: rgba(0, 0, 0, 0.80);
+    background-color: #2f3640;
     padding: 0.5rem;
 }
 
@@ -62,3 +67,20 @@ nav h1{
     transition: all ease 0.7s;
 }
 
+.container{
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    margin: 10%;
+}
+
+.especificaciones{
+    text-align: center;
+    background-color: #353b48;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    margin: 0.5rem;
+}

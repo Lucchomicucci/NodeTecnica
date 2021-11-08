@@ -7,10 +7,7 @@ RouterFalabella.get('/products', async( req, res) =>{
         const falabellaAPI = await axios.get('https://s3.sa-east-1.amazonaws.com/api.sis/embedded/PE_Falabella/srt/data/products.json')
         let dataArray = falabellaAPI.data
         for (var key of Object.keys(dataArray)){
-            dataArray = {
-                ...dataArray,
-                company: "falabella"
-            }
+            dataArray[key]["company"] = "Falabella"
         }
         res.render('products', {products: dataArray} )
     }catch (err){

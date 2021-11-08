@@ -1,17 +1,16 @@
 const express = require('express')
 const RouterCuracao = express.Router();
-const axios = require('axios')
+const axios = require('axios');
+const { addListener } = require('nodemon');
 
 RouterCuracao.get('/products', async( req, res) =>{
     try{
         const curacaoAPI = await axios.get('https://s3-sa-east-1.amazonaws.com/api.sis/embedded/PE_LaCuracao/SRT/data/products.json')
         let dataArray = curacaoAPI.data
         for (var key of Object.keys(dataArray)){
-            dataArray = {
-                ...dataArray,
-                company: "laCuracao"
-            }
+            dataArray[key]["company"] = "laCuracao"
         }
+        console.log(dataArray)
         res.render('products', {products: dataArray} )
     }catch (err){
         console.error('Error', err.message)

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -15,16 +18,23 @@
             <a href="http://localhost:3000/falabella/products">Falabella</a>
         </div>
     </nav>
-
-    <%- products.name  %> 
-    <%- products.image  %> 
-    <%- products.price  %> 
-    <%- products.link  %> 
-    <%- products.processor  %> 
-    <%- products.ram  %> 
-    <%- products.hdd  %> 
-    <%- products.form_factor  %> 
-    <%- products.os  %> 
-    <%- products.display  %> 
+    <div class="container">
+        <img src="<%= products.image  %>" alt="imagen del producto">
+        <div class="infogral">
+            <h1><%- products.name  %></h1>
+            <p><%- products.currency  %>  <%- products.price  %></p>
+        </div>
+    </div>
+    <div class="especificaciones">
+        <a href="<%= products.link  %>">Ver producto en la página oficial</a>
+        <h3>Especificaciones tecnicas:</h3>
+        <p>Procesador: <%- products.processor  %></p>
+        <p>RAM: <%- products.ram  %></p>
+        <p>Disco Rigido: <%- products.hdd || "No especifica" %></p>
+        <p>Disco Solido: <%- products.ssd || "No especifica" %> </p>
+        <p>Tipo: <%- products.form_factor  %></p>
+        <p>Sistema operativo: <%- products.os  %></p>
+        <p>Display: <%- products.display  %></p>
+    </div>
 </body>
 </html>
