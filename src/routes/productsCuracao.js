@@ -1,7 +1,6 @@
 const express = require('express')
 const RouterCuracao = express.Router();
 const axios = require('axios');
-const { addListener } = require('nodemon');
 
 RouterCuracao.get('/products', async( req, res) =>{
     try{
@@ -10,7 +9,6 @@ RouterCuracao.get('/products', async( req, res) =>{
         for (var key of Object.keys(dataArray)){
             dataArray[key]["company"] = "laCuracao"
         }
-        console.log(dataArray)
         res.render('products', {products: dataArray} )
     }catch (err){
         console.error('Error', err.message)

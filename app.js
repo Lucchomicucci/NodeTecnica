@@ -1,11 +1,11 @@
 const { PORT } = require('./config/index');
-const apiRoutes = ''
-// const { NotFoundMiddleware, ErrorMiddleware } = require('./src/middlewares');
 
 //agregar express
 const express = require('express');
 const app = express();
 //agregar cors
+const cors = require('cors')
+app.use(cors());
 
 // Archivos estaticos
 app.use(express.static('public'))
