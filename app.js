@@ -1,6 +1,7 @@
 const { PORT } = require('./config/index');
 const apiRoutes = ''
 // const { NotFoundMiddleware, ErrorMiddleware } = require('./src/middlewares');
+
 //agregar express
 const express = require('express');
 const app = express();
@@ -18,9 +19,11 @@ app.set('view engine', 'ejs')
 
 
 // api routes
-const newsRouter = require('./src/routes/products')
+const RouterCuracao = require('./src/routes/productsCuracao');
+const RouterFalabella = require('./src/routes/productsFalabella');
 
-app.use('/', newsRouter)
+app.use('/laCuracao', RouterCuracao)
+app.use('/falabella', RouterFalabella)
 
 
 // //error handle routes

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -15,19 +15,16 @@
             <a href="http://localhost:3000/falabella/products">Falabella</a>
         </div>
     </nav>
-    <div class="wrapper">
-    <% for (var key of Object.keys(products)) { %>
-        <a class="cardLink" href="/<%-products.company%>/products/<%-key%>">
-            <div class="card"> 
-                <img src="<%= products[key].image %>" />
-                <h3><%- products[key].name  %></h3>
-                <p><%- products[key].currency %> <%- products[key].price  %></p>
-            </div>
-        </a>
-        
-    <% } %>
-    </div> 
 
-    
+    <%- products.name  %> 
+    <%- products.image  %> 
+    <%- products.price  %> 
+    <%- products.link  %> 
+    <%- products.processor  %> 
+    <%- products.ram  %> 
+    <%- products.hdd  %> 
+    <%- products.form_factor  %> 
+    <%- products.os  %> 
+    <%- products.display  %> 
 </body>
 </html>
