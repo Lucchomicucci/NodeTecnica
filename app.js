@@ -1,5 +1,5 @@
 const { PORT } = require('./config/index');
-
+const { ErrorMiddleware } = require('./src/middlewares/not-found.middleware');
 //agregar express
 const express = require('express');
 const app = express();
@@ -10,8 +10,6 @@ app.use(cors());
 // Archivos estaticos
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
-app.use('/img', express.static(__dirname + 'public/img'))
-app.use('/js', express.static(__dirname + 'public/js'))
 
 // Templating engine
 app.set('views', './src/views/partials')
@@ -27,8 +25,7 @@ app.use('/falabella', RouterFalabella)
 
 
 // //error handle routes
-// app.use(ErrorMiddleware);
-// app.use(NotFoundMiddleware);
+app.use(ErrorMiddleware);
 
 //levantar servidor
 app.listen(PORT, ()=>{
